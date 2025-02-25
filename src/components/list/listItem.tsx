@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/Entypo';
+import Poppins from '../text/poppins';
 
 interface ListItemProps {
   number: number;
@@ -23,18 +24,18 @@ const ListItem: React.FC<ListItemProps> = ({
     <Pressable style={styles.container} onPress={onPress}>
       {/* Left side - Number */}
       <View style={styles.numberContainer}>
-        <Text style={styles.number}>{number}</Text>
+        <Poppins style={styles.number}>{number}</Poppins>
       </View>
 
       {/* Middle - Title */}
-      <Text style={styles.title}>{title}</Text>
+      <Poppins style={styles.title}>{title}</Poppins>
 
       {/* Right side - Button and Icon */}
       <View style={styles.rightContainer}>
         {/* Only show Go Top button for first item (id=1) */}
         {isOnTop ? (
           <View style={[styles.topButton, {backgroundColor: '#f1c40f'}]}>
-            <Text style={styles.topButtonText}>TOP</Text>
+            <Poppins style={styles.topButtonText}>TOP</Poppins>
           </View>
         ) : (
           onTopButtonPress && (
@@ -44,7 +45,7 @@ const ListItem: React.FC<ListItemProps> = ({
                 // e.stopPropagation();
                 onTopButtonPress();
               }}>
-              <Text style={styles.topButtonText}>Go Top</Text>
+              <Poppins style={styles.topButtonText}>Go Top</Poppins>
             </Pressable>
           )
         )}
@@ -77,12 +78,12 @@ const styles = StyleSheet.create({
   },
   number: {
     color: 'black',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
   },
   title: {
     flex: 1,
     fontSize: 16,
-    fontWeight: '500',
+    fontFamily: 'Poppins-SemiBold',
   },
   rightContainer: {
     flexDirection: 'row',
@@ -98,7 +99,7 @@ const styles = StyleSheet.create({
   topButtonText: {
     fontSize: 12,
     color: '#000',
-    fontWeight: '500',
+    fontFamily: 'Poppins-SemiBold',
   },
 });
 

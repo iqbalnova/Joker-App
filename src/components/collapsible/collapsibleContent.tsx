@@ -10,6 +10,7 @@ import {
   Pressable,
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Poppins from '../text/poppins';
 
 interface CollapsibleContentProps {
   items: string[];
@@ -55,7 +56,7 @@ const CollapsibleContent: React.FC<CollapsibleContentProps> = ({
           <Animated.View style={{transform: [{rotate: spin}]}}>
             <ActivityIndicator size="large" color="#6200ee" />
           </Animated.View>
-          <Text style={styles.loadingText}>Loading jokes...</Text>
+          <Poppins style={styles.loadingText}>Loading jokes...</Poppins>
         </View>
       ) : (
         <>
@@ -71,14 +72,14 @@ const CollapsibleContent: React.FC<CollapsibleContentProps> = ({
                     />
                   </View>
                   <View style={styles.textContainer}>
-                    <Text style={styles.itemText}>{item}</Text>
+                    <Poppins style={styles.itemText}>{item}</Poppins>
                   </View>
                 </View>
               </Pressable>
             ))
           ) : (
             <View style={styles.emptyContainer}>
-              <Text style={styles.emptyText}>No jokes available yet</Text>
+              <Poppins style={styles.emptyText}>No jokes available yet</Poppins>
             </View>
           )}
 
@@ -88,7 +89,7 @@ const CollapsibleContent: React.FC<CollapsibleContentProps> = ({
               onPress={onAddMore}
               activeOpacity={0.7}>
               <MaterialIcons name="add-circle" size={18} color="white" />
-              <Text style={styles.addButtonText}>More Jokes</Text>
+              <Poppins style={styles.addButtonText}>More Jokes</Poppins>
             </TouchableOpacity>
           )}
         </>
@@ -112,7 +113,7 @@ const styles = StyleSheet.create({
   loadingText: {
     marginTop: 8,
     color: '#6200ee',
-    fontWeight: '500',
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 14,
   },
   itemContainer: {
@@ -164,7 +165,7 @@ const styles = StyleSheet.create({
   },
   addButtonText: {
     color: 'white',
-    fontWeight: '600',
+    fontFamily: 'Poppins-SemiBold',
     fontSize: 16,
     marginLeft: 8,
   },

@@ -48,5 +48,12 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+	<string>assets/fonts/Poppins-Regular.ttf</string>
+	<string>assets/fonts/Poppins-Bold.ttf</string>
+	<string>assets/fonts/Poppins-Semibold.ttf</string>
+	<string>assets/fonts/Poppins-Medium.ttf</string>
+	</array>
 </dict>
 </plist>

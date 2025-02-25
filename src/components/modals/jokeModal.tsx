@@ -10,6 +10,7 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Poppins from '../text/poppins';
 
 interface JokeModalProps {
   visible: boolean;
@@ -94,8 +95,8 @@ const JokeModal: React.FC<JokeModalProps> = ({
               ]}>
               {/* Category Header */}
               <View style={styles.categoryHeader}>
-                <Text style={styles.emoji}>{getCategoryEmoji()}</Text>
-                <Text style={styles.categoryText}>{category}</Text>
+                <Poppins style={styles.emoji}>{getCategoryEmoji()}</Poppins>
+                <Poppins style={styles.categoryText}>{category}</Poppins>
               </View>
 
               {/* Joke Content */}
@@ -106,7 +107,7 @@ const JokeModal: React.FC<JokeModalProps> = ({
                   color="#6200ee"
                   style={styles.quoteIcon}
                 />
-                <Text style={styles.jokeText}>{joke || 'Loading...'}</Text>
+                <Poppins style={styles.jokeText}>{joke || 'Loading...'}</Poppins>
               </View>
 
               {/* Footer with actions */}
@@ -115,11 +116,11 @@ const JokeModal: React.FC<JokeModalProps> = ({
                   style={styles.shareButton}
                   onPress={() => console.log('Share joke')}>
                   <MaterialIcons name="share" size={20} color="#FFF" />
-                  <Text style={styles.shareText}>Share</Text>
+                  <Poppins style={styles.shareText}>Share</Poppins>
                 </TouchableOpacity> */}
 
                 <TouchableOpacity style={styles.closeButton} onPress={onClose}>
-                  <Text style={styles.closeText}>Close</Text>
+                  <Poppins style={styles.closeText}>Close</Poppins>
                 </TouchableOpacity>
               </View>
             </Animated.View>
@@ -162,7 +163,7 @@ const styles = StyleSheet.create({
   categoryText: {
     color: '#fff',
     fontSize: 20,
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
   },
   jokeContainer: {
     padding: 24,
@@ -179,7 +180,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     lineHeight: 26,
     color: '#333',
-    fontWeight: '500',
+    fontFamily: 'Poppins-SemiBold',
     textAlign: 'center',
   },
   footer: {
@@ -199,7 +200,7 @@ const styles = StyleSheet.create({
   },
   shareText: {
     color: '#fff',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
     marginLeft: 6,
   },
   closeButton: {
@@ -211,7 +212,7 @@ const styles = StyleSheet.create({
   },
   closeText: {
     color: '#6200ee',
-    fontWeight: 'bold',
+    fontFamily: 'Poppins-Bold',
   },
 });
 
